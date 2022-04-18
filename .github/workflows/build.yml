@@ -174,13 +174,7 @@ jobs:
         cd $NGHTTP2_CMAKE_DIR
         make
         make check
-    - name: Integration test
-      # Integration tests for nghttpx; autotools erases build
-      # artifacts.
-      if: matrix.buildtool == 'cmake'
-      run: |
-        cd $NGHTTP2_CMAKE_DIR/integration-tests
-        make itprep it
+
 
   build-windows:
     runs-on: windows-latest
